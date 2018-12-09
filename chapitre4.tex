@@ -3,30 +3,63 @@
 
 \section{Observateur identité :}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Observateur minimal identité :}
+
+\subsection{construction d'un observateur minimal identité et calcule des gains de cet observateur : }
+
+On a :\\\\
+$A=\begin{bmatrix}
+0 & 10.5820\\
+0 & -3.3333 \\
+\end{bmatrix}$\\\\
+
+Séparation de la matrice A :\\
+$\quad A_{11}=0$\\
+
+$A_{12}=10.5820$\\
+ 
+$A_{21}=0$\\
+
+$A_{12}=3.3333 $\\\\
+
+et soit : $B_{1}=0$ et $B_{2}=3.5$\\\\
+notre nouveau système s'écrit comme:\\\\
+
+\begin{equation}
+\left\{\begin{matrix}
+\dot{s}(t)=F_{1}s(t)+G_{tild}y(t)+H_{tild}u(t))\\
+ x^(t)=s(t)+G_{1}y(t)\\
+\end{matrix}\right.
+\end{equation}  
+ 
+telque :\\
+$G_{tild}=F_{1}G_{1}-G_{1}A_{11}+A_{21}$\\
+$H_{tild}=B_{2}G-GB_{1}$\\
+et $F_{1}$=$A_{22}-G_{1}A_{12}$\\\\
+
+Dans cette partie on calcule les gains de l’observateur de manière à modifier ses valeurs propres pour que l’observateur soit 4 fois plus rapide que la dynamique de la boucle fermée, et on choisit la valeur propre $P=-2.4$, car on cherche à estimer $x_{2}$, alors on prend le réel de la deuxième valeur propre.\\\\  
+après avoir utilisé Matlab \hyperref[section1.2]{(voir Annexe 2)}\label{annexe2} on obtient :\\\\
+$G_{1}=0.8190$\\\\
+
+et : $F_{1}=-9.6$\\\\
+
+
+Calcule De $G_{tild}$ et $H_{tild}$:\\\\
+
+on a :$G_{tild}=F_{1}G_{1}-G_{1}A_{11}+A_{21}$ et $H_{tild}=B_{2}-G_{1}B_{1}$\\\\
+après avoir remplacer les valeur numérique, on trouve :\\\\
+
+$G_{tild}=-9.8280$  \quad $H_{tild}=3.5$\\
+
+Alors on obtient notre système comme :\\\\
+
+\begin{equation}
+\left\{\begin{matrix}
+\dot{s}(t)=-9.6s(t)-9.8280y(t)+3.5u(t))\\
+ x^(t)=s(t)+0.8190y(t)\\
+\end{matrix}\right.
+\end{equation}
+
 
 
 

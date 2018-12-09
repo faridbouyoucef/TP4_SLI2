@@ -1,2 +1,42 @@
 \chapter{MISE EN PLACE D'UN RETOUR D’ÉTAT }
 \addcontentsline{toc}{chapter}{MISE EN PLACE D'UN RETOUR D’ÉTAT }
+
+\section{La justification de la possibilité d'annuler l'erreur de position :}
+
+
+
+
+\section{Calcul des gain K et N permettant de placer les valeurs propres du système asservi en $P_{1}$, $P_{2}$ et d'annuler l'erreur statique :}
+
+On a : $P_{1}$, $P_{2}=-2.4\pm5.5j$ \\\\
+
+Pour calculer la valeur du Gain K on pose :\\
+
+$K=[k_{1}\quad k_{2}]$\\\\
+et on a : 
+$det(\lambda I_{dim2}-(A-BK))=(\lambda-P_{1})(\lambda-P_{2})$\\\\
+    
+D'ou :\\
+$\lambda I_{dim2}-(A-BK)=\begin{bmatrix} 
+\lambda & -10.5820  \\
+ 3.5k_{1} & \lambda+3.3333+3.5k_{2} 
+\end{bmatrix} $\\\\
+ 
+après avoir l'identification des deux déterminants on obtient alors :\\
+
+$k_{1}=0.9723  ,\quad k_{2}=0.4190 $, \\\\
+
+D'ou : $K=[0.9723 \quad 0.4190]$\\\\
+
+De même, on a calculer la valeur de K en utilisant MATLAB. \hyperref[section1.2]{(voir Annexe 1)}\label{annexe1}\\\\
+
+ET pour calculer la valeur du Gain N on a :\\\\
+
+$N=1/(C*(-A+B*K)^{-1}*B*\varepsilon $ \quad avec : $\varepsilon=1$, car on veut que l'erreur statique doit être nulle \\\\
+
+et on obtient $N=0.9723$ \quad \hyperref[section1.2]{(voir Annexe 1)}\label{annexe1}\\\\
+
+\section{La représentation d'état de la boucle fermée :}
+
+
+
